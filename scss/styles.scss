@@ -1,0 +1,212 @@
+//declared a primary color and a primary font
+$primary-color:rgba(255, 0, 0, 0.956);
+$primaryFont: Sans-serif;
+
+@mixin flexCenter($center, $direction) {
+    display: flex;
+    justify-content: $center;
+    flex-direction: $direction;
+}
+
+@mixin gradient($color1, $color2) {
+    background: linear-gradient(to top, (#e60b09 , #e9d022));
+}
+
+body {
+    @include flexCenter(space-evenly, column);
+    font-family: $primaryFont;
+    height: 100%;
+    //gives my background linear gradient
+    @include gradient(rgb(223, 75, 75), rgb(255, 166, 0))
+}
+
+.h1-div {
+    @include flexCenter(center, row);
+}
+
+h1 {
+    color: $primary-color;
+    margin: 32px auto;
+    overflow: hidden;
+
+    //adds an animantion to my h1 header
+    animation: bounce 2s ease-in-out 3, color-change 3s linear 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes color-change {
+    0% {
+        color: $primary-color;
+    }
+    50% {
+        color: lighten($primary-color, 20%);
+    }
+    100% {
+        color: $primary-color;
+    }
+}
+
+.budget-container {
+    @include flexCenter(center, row);
+    gap: 30px;
+}
+
+.budget-container input {
+    width: 160px;
+    margin: 10px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.income-container {
+    margin-right: 60px;
+    left: 0;
+}
+
+.income-container, .spent-container {
+    padding: 25px;
+}
+
+#statements {
+    @include flexCenter(space-between, row);
+    padding: 50px;
+}
+
+#statements p {
+    font-size: large;
+    font-weight: 600;
+}
+
+button {
+    background-color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    height: 22px;
+    width: 160px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    //gives my button a hover effect by changing the color and making it grow in size
+    &:hover {
+        background-color: $primary-color;
+        transform: scale(1.1);
+    }
+}
+
+.income-table, .expense-table {
+    @include flexCenter(space-between, row);
+    padding: 0 5px;
+}
+
+#incomeTable, #spentTable {
+    background-color: white;
+    height: 400px;
+    width: 45%;
+}
+
+.titleWrap {
+    background-color: rgb(144, 144, 144);
+    top: 0;
+    padding: 5px;
+}
+
+.amount-left {
+    @include flexCenter(center, column);
+    align-items: center;
+    font-size: 24px;
+}
+
+.copyright-wrapper {
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.copyright-wrapper p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.copyright-wrapper p a {
+    color: inherit;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all .3s ease-out;
+}
+
+.copyright-wrapper p a:hover {
+    color: rgb(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 15px;
+    }
+
+    .budget-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .budget-container input {
+        width: 90%; // Inputs span across smaller screens
+    }
+
+    .income-container,
+    .spent-container {
+        margin: 0 auto; // Center-align containers for smaller screens
+    }
+
+    #statements {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #statements p {
+        font-size: medium;
+    }
+
+    button {
+        width: 90%;
+        height: 20px;
+        margin: 10px;
+        border-radius: 5px; 
+    }
+
+    .income-table,
+    .expense-table {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #incomeTable,
+    #spentTable {
+        width: 90%;
+        height: auto; 
+    }
+
+    .amount-left {
+        font-size: 18px;
+    }
+
+    .copyright-wrapper {
+        padding: 15px 0;
+    }
+
+    .copyright-wrapper p {
+        font-size: 12px;
+    }
+}

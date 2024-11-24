@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="h1-div">
+        <div class="tracker-title">
+            <h1>Sergio Budget Tracker</h1>
+        </div>
+    </div>
+
+    <div class="budget-container">
+        <div class="income-container">
+            <input type="text" id="income" placeholder="The Income">
+            <input type="date" id="incomeDate">
+            <input type="number" id="incomeAmount" placeholder="Income Amount">
+            <button onclick="addsIncome()">Click Here</button>
+        </div>
+        <div class="spent-container">
+            <input type="text" id="expense" placeholder="The Expense">
+            <input type="date" id="expenseDate">
+            <input type="number" id="expenseAmount" placeholder="Expense Amount">
+            <button onclick="addsExpense()">Click Here</button>
+        </div>
+    </div>
+        <div id="statements">
+            <div id="incomeTable">
+                <div class="titleWrap">
+                    <div class="income-table">
+                        <p>The Income</p>
+                        <p>Date</p>
+                        <p>Amount</p>
+                    </div>
+                </div>
+            </div>
+            <div id="spentTable">
+                <div class="titleWrap">
+                    <div class="expense-table">
+                        <p>The Expense</p>
+                        <p>Date</p>
+                        <p>Amount</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="amount-left">
+        <h3>Your Balance is:</h3>
+        <p id="totalLeft">0</p>
+    </div>
+
+    <div class="copyright-wrapper">
+        <p>Created and Designed by
+            <a href="https://www.linkedin.com/in/sergio7quintero/" target="blank">Sergio Quintero</a>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

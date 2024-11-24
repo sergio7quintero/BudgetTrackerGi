@@ -1,0 +1,194 @@
+body {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  font-family: Sans-serif;
+  height: 100%;
+  background: linear-gradient(to top, #e60b09, #e9d022);
+}
+
+.h1-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+h1 {
+  color: rgba(255, 0, 0, 0.956);
+  margin: 32px auto;
+  overflow: hidden;
+  animation: bounce 2s ease-in-out 3, color-change 3s linear 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes color-change {
+  0% {
+    color: rgba(255, 0, 0, 0.956);
+  }
+  50% {
+    color: rgba(255, 102, 102, 0.956);
+  }
+  100% {
+    color: rgba(255, 0, 0, 0.956);
+  }
+}
+.budget-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.budget-container input {
+  width: 160px;
+  margin: 10px;
+  height: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.income-container {
+  margin-right: 60px;
+  left: 0;
+}
+
+.income-container, .spent-container {
+  padding: 25px;
+}
+
+#statements {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 50px;
+}
+
+#statements p {
+  font-size: large;
+  font-weight: 600;
+}
+
+button {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  height: 22px;
+  width: 160px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: rgba(255, 0, 0, 0.956);
+  transform: scale(1.1);
+}
+
+.income-table, .expense-table {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0 5px;
+}
+
+#incomeTable, #spentTable {
+  background-color: white;
+  height: 400px;
+  width: 45%;
+}
+
+.titleWrap {
+  background-color: rgb(144, 144, 144);
+  top: 0;
+  padding: 5px;
+}
+
+.amount-left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+}
+
+.copyright-wrapper {
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.copyright-wrapper p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.copyright-wrapper p a {
+  color: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.copyright-wrapper p a:hover {
+  color: rgb(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 15px;
+  }
+  .budget-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .budget-container input {
+    width: 90%;
+  }
+  .income-container,
+  .spent-container {
+    margin: 0 auto;
+  }
+  #statements {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  #statements p {
+    font-size: medium;
+  }
+  button {
+    width: 90%;
+    height: 20px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  .income-table,
+  .expense-table {
+    flex-direction: column;
+    align-items: center;
+  }
+  #incomeTable,
+  #spentTable {
+    width: 90%;
+    height: auto;
+  }
+  .amount-left {
+    font-size: 18px;
+  }
+  .copyright-wrapper {
+    padding: 15px 0;
+  }
+  .copyright-wrapper p {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

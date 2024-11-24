@@ -1,0 +1,15 @@
+{
+  "name": "budgettrackergi",
+  "version": "1.0.0",
+  "description": "Building a budget tracker using Javascript and SASS",
+  "main": "script.js",
+  "scripts": {
+    "sass": "sass scss/styles.scss css/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
